@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .scroll-bar {
+          width: 200px;
+        }
+        .view-cart-button {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          position:relative;
+          top:- 40px;
+        left: -350px;
+          transform: translateY(-50%);
+          z-index: 9999;
+        }
+        .product-details {
+          text-align: left;
+          width: 300px;
+        }
+    </style>
+
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+
+  <div id="cart-container">
+    <div class="product-row">
+      <img src="img/ghee.jpg" alt="Product 1" class="product-image">
+      <div class="product-details">
+        <h3>Milky Mist Ghee pet 500g</h3>
+        <p class="product-price">$396.00</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+
+      <p class="subtotal">$396.00</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/black.jpg" alt="Product 2" class="product-image">
+      <div class="product-details">
+        <h3>catch black salt sprinkle-200g</h3>
+        <p class="product-price">$42</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+      <p class="subtotal">$42</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/aasirvaad.jpg" alt="Product 3" class="product-image">
+      <div class="product-details">
+        <h3>Aasirvaad svasti pure cow Ghee-Desi Ghee with rice</h3>
+        <p class="product-price">$185</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$185</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/cumin.jpg" alt="Product 4" class="product-image">
+      <div class="product-details">
+        <h3>Amazon brand -vedaka whole seera(cumin) 200g</h3>
+        <p class="product-price">$139</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$139</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/fenugreek.jpg" alt="Product 5" class="product-image">
+      <div class="product-details">
+        <h3>Amazon brand -vedaka whole seera(methi) 200g</h3>
+        <p class="product-price">$32</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$32</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/sugar.jpg" alt="Product 6" class="product-image">
+      <div class="product-details">
+        <h3>Parry's white label sugar,1kg</h3>
+        <p class="product-price">$44</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$44</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/vsugar.jpg" alt="Product 7" class="product-image">
+      <div class="product-details">
+        <h3>Vedaka sugar,1kg</h3>
+        <p class="product-price">$57</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$57</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/idhayam.jpg" alt="Product 8" class="product-image">
+      <div class="product-details">
+        <h3>Idhayam gingely oil,1L</h3>
+        <p class="product-price">$490.00</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$490.00</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/gingely.jpg" alt="Product 9" class="product-image">
+      <div class="product-details">
+        <h3>Amazon brand-vedaka sesame (gingely) oil bottle</h3>
+        <p class="product-price">$399</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$399</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <img src="img/fortune.jpg" alt="Product 10" class="product-image">
+      <div class="product-details">
+        <h3>Fortune sunlite refined sunflower oil 1L</h3>
+        <p class="product-price">$120</p>
+        <p>Discount: <input type="number" class="product-discount-percentage" value="5" min="0" max="100">%</p>
+      </div>
+      <p>Quantity:<input type="number" class="product-quantity" value="1" min="1" max="10"></p>
+
+      <p class="subtotal">$120</p>
+      <button onclick="addToCart(this.parentNode)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="totals">
+    <p>Total Amount: <span id="total-amount">$0.00</span></p>
+    <p>Total Savings: <span id="total-savings">$0.00</span></p>
+  </div> 
+  
+  <script>
+    function addToCart(productRow) {
+      const productName = productRow.querySelector('.product-details h3').textContent;
+      const productPrice = parseFloat(productRow.querySelector('.product-price').textContent.replace('$', ''));
+      const productDiscount = parseFloat(productRow.querySelector('.product-discount-percentage').value);
+      const productQuantity = parseInt(productRow.querySelector('.product-quantity').value);
+      const subtotal = (productPrice * productQuantity) - (productPrice * productDiscount * 0.01);
+      
+
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+
+      cartItem.innerHTML = `
+        <div class="cart-item-details">
+          <span class="cart-item-name">${productName}</span>
+          <span class="cart-item-quantity">${productQuantity}</span>
+          <span class="cart-item-quantity">Quantity: ${productQuantity}</span>
+
+        </div>
+        <span class="cart-item-subtotal">$${subtotal.toFixed(2)}</span>
+        <button class="cart-item-remove" onclick="removeCartItem(this.parentNode)">Remove</button>
+      `;
+
+      const cartContainer = document.getElementById('cart-container');
+      cartContainer.appendChild(cartItem);
+
+      updateTotals();
+    }
+
+   
+
+    function removeCartItem(cartItem) {
+      cartItem.remove();
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const cartItems = document.getElementsByClassName('cart-item');
+      let totalAmount = 0;
+      let totalSavings = 0;
+
+      for (let i = 0; i < cartItems.length; i++) {
+        const cartItem = cartItems[i];
+        const subtotal = parseFloat(cartItem.querySelector('.cart-item-subtotal').textContent.replace('$', ''));
+        totalAmount += subtotal;
+      }
+
+      totalAmount = totalAmount.toFixed(2);
+      totalSavings = (totalAmount * 0.05).toFixed(2); // Assuming a 5% discount for all products
+
+      document.getElementById('total-amount').textContent = `$${totalAmount}`;
+      document.getElementById('total-savings').textContent = `$${totalSavings}`;
+    }
+     
+
+
+    
+  </script>
+ 
+</body>
+</html>
+
+
